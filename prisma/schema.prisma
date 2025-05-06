@@ -1,11 +1,13 @@
+//specify the Prisma Client generator
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  output   = "@prisma/client"
 }
 
+//specify the data source
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("postgresql://lhern:@localhost:5432/lhern?schema=public")
 }
 
 model Instructor {
